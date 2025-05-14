@@ -16,12 +16,37 @@ Else
  
 Program:
 
-//type your code here
+```
+#include<stdio.h>
+struct person{
+    int x;
+    char y[20];
+};
+int main()
+{
+   struct person p;
+   printf("Enter age: ");
+   scanf("%d",&p.x);
+   printf("Enter Name: ");
+   scanf("%s",p.y);
+   printf("Age:%d\n",p.x);
+   printf("Name:%s\n",p.y);
+   
+   if(p.x>6)
+   {
+       printf("eligibility:yes");
+   }
+   else
+   {
+       printf("eligibility:no");
+   }
+}
+```
 
 
 Output:
 
-//paste your output here
+![image](https://github.com/user-attachments/assets/e171cb54-885c-4994-8b16-11e4a6731983)
 
 
 Result:
@@ -44,7 +69,35 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+#include <stdio.h>
+
+struct Result {
+    int sum;
+};
+
+
+struct Result calculate(int a, int b) {
+    struct Result res;
+    res.sum = a + b;
+    return res;
+}
+
+int main() {
+    int num1, num2;
+    struct Result result;
+    scanf("%d %d", &num1, &num2);
+
+    
+    result = calculate(num1, num2);
+
+    
+    printf("%d\n", result.sum);
+
+    return 0;
+}
+
+```
 
 
 
@@ -52,7 +105,7 @@ Program:
 Output:
 
 
-//paste your output here
+![image](https://github.com/user-attachments/assets/1a06ac13-bb32-4a4b-b2c9-ef6f24b5ba14)
 
 
 
@@ -86,7 +139,19 @@ Use scanf to input the file name into the name array.
  
 Program:
 
-//type your code here
+```
+#include <stdio.h>
+int main()
+{
+    char fn[100];
+    scanf("%s",fn);
+    FILE *file=fopen(fn,"w");
+    printf("%s File Created Successfully\n",fn);
+    printf("%s File Opened\n",fn);
+    fclose(file);
+    printf("%s File Closed\n",fn);
+}
+```
 
 
 
@@ -94,7 +159,7 @@ Program:
 Output:
 
 
-//paste your output here
+![image](https://github.com/user-attachments/assets/7ed35802-57df-473e-a516-2810e8998ace)
 
 
 
@@ -133,7 +198,27 @@ Use scanf to input the file name into the name array and the number of strings i
  
 Program:
 
-//type your code here
+```
+#include <stdio.h>
+int main()
+{
+    char fn[100];
+    scanf("%s",fn);
+    
+    FILE *file=fopen(fn,"w");
+    printf("%s Opened\n",fn);
+    
+    int n;
+    char wd[100];
+    scanf("%d",&n);
+    for(int i=0;i<n;i++)
+    {
+        scanf("%s",wd);
+        fputs(wd,file);
+    }
+    printf("Data added Successfully");
+}
+```
 
 
 
@@ -141,7 +226,7 @@ Program:
 Output:
 
 
-//paste your output here
+![image](https://github.com/user-attachments/assets/6055b7d6-0636-464f-98d4-7ac0d3713dad)
 
 
 
@@ -187,7 +272,41 @@ Algorithm:
 
 Program:
 
-//type your code here
+```
+#include <stdio.h>
+#include <stdlib.h>
+struct Subject
+{
+    char name[20];
+    int marks;
+};
+int main()
+{
+    int i,n;
+    scanf("%d",&n);
+    struct Subject *s = (struct Subject *)malloc(n*sizeof(struct Subject));
+    if(s==NULL)
+    {
+        printf("Memory Alocation Failed\n");
+        return 1;
+    }
+    for(i=0;i<n;i++)
+    {
+        scanf("%s %d",s[i].name,&s[i].marks);
+    }
+    for(i=0;i<n;i++)
+    {
+        printf("%s  %d\n",s[i].name,s[i].marks);
+    }
+    
+    free (s);
+    
+    return 0;
+}
+
+
+
+```
 
 
 
@@ -195,7 +314,9 @@ Program:
 Output:
 
 
-//paste your output here
+
+![Screenshot 2025-04-25 102526](https://github.com/user-attachments/assets/297a272e-1888-4dcc-a7ce-9b03c9c2bac3)
+
 
 
 
@@ -203,4 +324,4 @@ Output:
 
 
 Result:
-Thus, the program is verified successfully
+Thus, the program is verified successfully.
